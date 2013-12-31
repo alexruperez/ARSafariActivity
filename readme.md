@@ -7,7 +7,7 @@
 ## Requirements
 
 - As `UIActivity` is iOS >= 6 only, so is the subclass.
-- This project uses ARC. If you want to use it in a non ARC project, you must add the `-fobjc-arc` compiler flag to ARChromeActivity.m in Target Settings > Build Phases > Compile Sources.
+- This project uses ARC. If you want to use it in a non ARC project, you must add the `-fobjc-arc` compiler flag to ARSafariActivity.m in Target Settings > Build Phases > Compile Sources.
 
 ## Installation
 
