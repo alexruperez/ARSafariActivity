@@ -8,6 +8,6 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, '6.0'
   spec.source       = { :git => 'https://github.com/alexruperez/ARSafariActivity.git', :tag => 'v0.0.1' }
   spec.source_files = 'ARSafariActivity/*.{h,m}'
-  spec.resources    = 'ARSafariActivity/*.{png,lproj}'
+  spec.resources    = 'ARSafariActivity/ARSafariActivity.bundle'
   spec.requires_arc = true
 end

@@ -23,16 +23,19 @@
 
 - (UIImage *)activityImage
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        return [UIImage imageNamed:[self.activityType stringByAppendingString:@"-iPad"]];
-    } else {
-        return [UIImage imageNamed:self.activityType];
-    }
+	NSString *filename = [self activityType];
+
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		filename = [filename stringByAppendingString:@"-iPad"];
+	}
+
+	NSString *imagePath = [[self bundle] pathForResource:filename ofType:@"png"];
+	return [UIImage imageWithContentsOfFile:imagePath];
 }
 
 - (NSString *)activityTitle
 {
-  return NSLocalizedStringFromTable(@"Open in Safari", NSStringFromClass([self class]), nil);
+	return NSLocalizedStringFromTableInBundle(@"Open in Safari", NSStringFromClass([self class]), [self bundle], nil);
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
@@ -64,6 +67,16 @@
 	}
     
     [self activityDidFinish:completed];
+}
+
+- (NSBundle *)bundle
+{
+	NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:NSStringFromClass([self class]) withExtension:@"bundle"];
+	if (bundleURL) {
+		return [NSBundle bundleWithURL:bundleURL];
+	}
+
+	return [NSBundle mainBundle];
 }
 
 @end
