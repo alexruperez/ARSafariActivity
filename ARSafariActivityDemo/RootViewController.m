@@ -20,10 +20,10 @@
     [super viewDidLoad];
 	
 	UIButton *showActivitiesButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[showActivitiesButton setTitle:@"Show Activities" forState:UIControlStateNormal];
+	[showActivitiesButton setTitle:NSLocalizedString(@"Show Activities", @"Show Activities button") forState:UIControlStateNormal];
 	[showActivitiesButton addTarget:self action:@selector(showActivities:) forControlEvents:UIControlEventTouchUpInside];
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-	[showActivitiesButton setFrame:CGRectMake((screenSize.width/2)-60, (screenSize.height/2)-30, 120, 60)];
+	[showActivitiesButton setFrame:CGRectMake((screenSize.width/2)-100, (screenSize.height/2)-30, 200, 60)];
     [self.view addSubview:showActivitiesButton];
 }
 
