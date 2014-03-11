@@ -27,3 +27,9 @@ UIActivityViewController *activityViewController = [[UIActivityViewController al
 ```
 
 Note that you can include the activity in any UIActivityViewController and it will only be shown to the user if there is a URL in the activity items.
+
+## Thanks
+
+podspec file added by @aaronbrethorst
+bundle added by @raymondjavaxx
+iOS6 icon from http://iconfinder.com and added by @banaslee

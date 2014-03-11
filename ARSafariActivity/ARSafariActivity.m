@@ -25,12 +25,16 @@
 {
 	NSString *filename = [self activityType];
     
-    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending)
+    {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
             filename = [filename stringByAppendingString:@"-iPad"];
         }
     }
-    else {
+    else
+    {
+        // iOS6 icon from iconfinder.com and added by @banaslee
         filename = [filename stringByAppendingString:@"-iOS6"];
     }
     
@@ -45,8 +49,10 @@
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
 {
-	for (id activityItem in activityItems) {
-		if ([activityItem isKindOfClass:[NSURL class]] && [[UIApplication sharedApplication] canOpenURL:activityItem]) {
+	for (id activityItem in activityItems)
+    {
+		if ([activityItem isKindOfClass:[NSURL class]] && [[UIApplication sharedApplication] canOpenURL:activityItem])
+        {
 			return YES;
 		}
 	}
@@ -56,8 +62,10 @@
 
 - (void)prepareWithActivityItems:(NSArray *)activityItems
 {
-    for (id activityItem in activityItems) {
-		if ([activityItem isKindOfClass:[NSURL class]] && [[UIApplication sharedApplication] canOpenURL:activityItem]) {
+    for (id activityItem in activityItems)
+    {
+		if ([activityItem isKindOfClass:[NSURL class]] && [[UIApplication sharedApplication] canOpenURL:activityItem])
+        {
 			self.url = activityItem;
 		}
 	}
@@ -67,7 +75,8 @@
 {
     bool completed = NO;
 	
-	if (self.url) {
+	if (self.url)
+    {
 		completed = [[UIApplication sharedApplication] openURL:self.url];
 	}
     
@@ -77,7 +86,8 @@
 - (NSBundle *)bundle
 {
 	NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:NSStringFromClass([self class]) withExtension:@"bundle"];
-	if (bundleURL) {
+	if (bundleURL)
+    {
 		return [NSBundle bundleWithURL:bundleURL];
 	}
 
