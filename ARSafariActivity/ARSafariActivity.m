@@ -24,11 +24,16 @@
 - (UIImage *)activityImage
 {
 	NSString *filename = [self activityType];
-
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		filename = [filename stringByAppendingString:@"-iPad"];
-	}
-
+    
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending) {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            filename = [filename stringByAppendingString:@"-iPad"];
+        }
+    }
+    else {
+        filename = [filename stringByAppendingString:@"-iOS6"];
+    }
+    
 	NSString *imagePath = [[self bundle] pathForResource:filename ofType:@"png"];
 	return [UIImage imageWithContentsOfFile:imagePath];
 }
