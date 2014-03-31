@@ -23,23 +23,16 @@
 
 - (UIImage *)activityImage
 {
-	NSString *filename = [self activityType];
-    
-    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending)
-    {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        {
-            filename = [filename stringByAppendingString:@"-iPad"];
-        }
-    }
-    else
-    {
-        // iOS6 icon from iconfinder.com and added by @banaslee
-        filename = [filename stringByAppendingString:@"-iOS6"];
-    }
-    
-	NSString *imagePath = [[self bundle] pathForResource:filename ofType:@"png"];
-	return [UIImage imageWithContentsOfFile:imagePath];
+	NSString *activityType = [self activityType];
+	NSString *filename = [NSString stringWithFormat:@"%@.bundle/%@", activityType, activityType];
+
+	if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending)
+	{
+		// iOS6 icon from iconfinder.com and added by @banaslee
+		filename = [filename stringByAppendingString:@"-iOS6"];
+	}
+
+	return [UIImage imageNamed:filename];
 }
 
 - (NSString *)activityTitle
