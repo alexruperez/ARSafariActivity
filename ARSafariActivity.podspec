@@ -1,13 +1,17 @@
-Pod::Spec.new do |spec|
-  spec.name         = 'ARSafariActivity'
-  spec.version      = '0.0.2'
-  spec.license      = 'MIT'
-  spec.summary      = 'A UIActivity subclass that opens URLs in Safari.'
-  spec.homepage     = 'https://github.com/alexruperez/ARSafariActivity'
-  spec.author       = 'Alex Ruperez'
-  spec.platform     = :ios, '6.0'
-  spec.source       = { :git => 'https://github.com/alexruperez/ARSafariActivity.git', :tag => 'v0.0.2' }
-  spec.source_files = 'ARSafariActivity/*.{h,m}'
-  spec.resources    = 'ARSafariActivity/ARSafariActivity.bundle'
-  spec.requires_arc = true
+Pod::Spec.new do |s|
+  s.name						 = 'ARSafariActivity'
+  s.version					 = '0.0.3'
+  s.license					 = 'MIT'
+  s.summary					 = 'A UIActivity subclass that opens URLs in Safari.'
+  s.homepage				 = 'https://github.com/alexruperez/ARSafariActivity'
+	s.screenshots			 = "https://raw.githubusercontent.com/alexruperez/ARSafariActivity/master/screenshot.png"
+  s.author					 = { "alexruperez" => "contact@alexruperez.com" }
+	s.social_media_url = 'https://twitter.com/alexruperez'
+  s.platform				 = :ios, '6.0'
+	s.license					 = 'MIT'
+  s.source					 = { :git => 'https://github.com/alexruperez/ARSafariActivity.git', :tag => s.version.to_s }
+  s.source_files		 = 'ARSafariActivity/*.{h,m}'
+  s.resources				 = 'ARSafariActivity/ARSafariActivity.bundle'
+  s.requires_arc		 = true
+	s.frameworks			 = 'UIKit'
 end
