@@ -14,6 +14,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const ARSafariActivityType;
+
 @interface ARSafariActivity : UIActivity
 
 @property (nonatomic, strong) NSURL *url;

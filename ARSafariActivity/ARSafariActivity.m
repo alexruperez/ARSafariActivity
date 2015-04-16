@@ -14,11 +14,13 @@
 
 #import "ARSafariActivity.h"
 
+NSString * const ARSafariActivityType = @"ARSafariActivity";
+
 @implementation ARSafariActivity
 
 - (NSString *)activityType
 {
-	return NSStringFromClass([self class]);
+	return ARSafariActivityType;
 }
 
 - (UIImage *)activityImage
