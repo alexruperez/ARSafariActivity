@@ -1,5 +1,13 @@
 # ARSafariActivity
 
+[![Twitter](http://img.shields.io/badge/contact-@alexruperez-blue.svg?style=flat)](http://twitter.com/alexruperez)
+[![Version](https://img.shields.io/cocoapods/v/ARSafariActivity.svg?style=flat)](http://cocoadocs.org/docsets/ARSafariActivity)
+[![License](https://img.shields.io/cocoapods/l/ARSafariActivity.svg?style=flat)](http://cocoadocs.org/docsets/ARSafariActivity)
+[![Platform](https://img.shields.io/cocoapods/p/ARSafariActivity.svg?style=flat)](http://cocoadocs.org/docsets/ARSafariActivity)
+[![Analytics](https://ga-beacon.appspot.com/UA-55329295-1/ARSafariActivity/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+
+## Overview
+
 `ARSafariActivity` is a `UIActivity` subclass that provides an "Open in Safari" action to a `UIActivityViewController`.
 
 ![ARSafariActivity screenshot](https://raw.github.com/alexruperez/ARSafariActivity/master/screenshot.png "ARSafariActivity screenshot")
