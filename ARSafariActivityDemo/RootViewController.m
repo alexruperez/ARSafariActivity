@@ -27,13 +27,19 @@
     [self.view addSubview:showActivitiesButton];
 }
 
-- (void)showActivities:(id)sender
+- (void)showActivities:(UIButton *)button
 {
 	NSURL *url = [NSURL URLWithString:@"http://alexruperez.com"];
 	
 	ARSafariActivity *safariActivity = [[ARSafariActivity alloc] init];
 	
 	UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:@[safariActivity]];
+    
+    if ([activityVC respondsToSelector:@selector(popoverPresentationController)])
+    {
+        activityVC.popoverPresentationController.sourceView = button;
+        activityVC.popoverPresentationController.sourceRect = button.bounds;
+    }
 	
 	[self presentViewController:activityVC animated:YES completion:nil];
 }

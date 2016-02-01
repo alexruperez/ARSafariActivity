@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name						 = 'ARSafariActivity'
-  s.version					 = '0.0.3'
+  s.version					 = '1.0.4'
   s.license					 = 'MIT'
   s.summary					 = 'A UIActivity subclass that opens URLs in Safari.'
   s.homepage				 = 'https://github.com/alexruperez/ARSafariActivity'
